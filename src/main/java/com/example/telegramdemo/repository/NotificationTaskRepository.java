@@ -19,7 +19,7 @@ public interface NotificationTaskRepository extends JpaRepository <NotificationT
 
 
     @Modifying
-    @Query("DELETE FROM NotificationTask WHERE massage like %:nameLike %")
+    @Query("DELETE FROM NotificationTask WHERE massage like %:nameLike%")
     void removeAllLike(@Param ("nameLike") String nameLike);
 
 

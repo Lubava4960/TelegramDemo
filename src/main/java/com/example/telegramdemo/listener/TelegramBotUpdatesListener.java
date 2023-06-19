@@ -29,7 +29,7 @@ import java.util.regex.Pattern;
 public class TelegramBotUpdatesListener implements UpdatesListener {
 
     private final Logger logger = LoggerFactory.getLogger(TelegramBotUpdatesListener.class);
-    private final Pattern pattern=Pattern.compile("(\\d{1,2}\\.\\d{1,2}\\.\\d{4} \\d{1,2}:\\d{2})\\s+([А-я\\d\\s.,!?:]+)");
+    private final Pattern pattern=Pattern.compile("(\\d{1,2}\\.\\d{1,2}\\.\\d{2,4} \\d{1,2}:\\d{2})\\s+([А-я\\d\\s.,!?:]+)");
 
     private final DateTimeFormatter dateTimeFormatter=DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
 
@@ -66,7 +66,7 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
                     Matcher matcher = pattern.matcher(text);
                     if (matcher.find()) {
                         LocalDateTime dateTime = parse(matcher.group(1));
-                        if (Objects.isNull(dateTime)) {
+                        if (Objects.isNull(dateTime) ) {
                             sendMessage(chatId, "Некорректный формат даты и/или времени!");
 
                         } else {

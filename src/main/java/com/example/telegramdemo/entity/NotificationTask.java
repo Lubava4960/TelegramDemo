@@ -1,20 +1,23 @@
 package com.example.telegramdemo.entity;
 
-import javax.persistence.*;
+
 import java.time.LocalDateTime;
+import javax.persistence.*;
 
 @Entity
-@Table(name="notification task ")
+@Table(name = "notification_task ")
 public class NotificationTask {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
      private long id;
-
+    @Column(nullable = false)
     private String massage;
-
+    @Column(name="chat_id",nullable = false)
     private long chatId;
+    @Column(name="notification_date_time", nullable = false)
     private LocalDateTime notificationDateTime;
+
 
     public long getId() {
         return id;
