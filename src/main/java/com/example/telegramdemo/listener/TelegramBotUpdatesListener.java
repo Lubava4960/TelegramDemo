@@ -66,7 +66,8 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
                     Matcher matcher = pattern.matcher(text);
                     if (matcher.find()) {
                         LocalDateTime dateTime = parse(matcher.group(1));
-                        if (Objects.isNull(dateTime) ) {
+                        if (Objects.isNull(dateTime))
+                            {
                             sendMessage(chatId, "Некорректный формат даты и/или времени!");
 
                         } else {
@@ -108,6 +109,7 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
         }
 
     }
+
 
 }
 
