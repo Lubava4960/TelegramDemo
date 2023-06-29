@@ -74,7 +74,7 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
                             String txt = matcher.group(2);
                             NotificationTask notificationTask=new NotificationTask();
                             notificationTask.setChatId(chatId);
-                            notificationTask.setMassage(txt);
+                            notificationTask.setMessage(txt);
                             notificationTask.setNotificationDateTime(dateTime);
                             notificationTaskService.save(notificationTask);
                             sendMessage(chatId, "Задача успешно запланирована!");

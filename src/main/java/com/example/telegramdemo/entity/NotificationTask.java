@@ -12,7 +12,7 @@ public class NotificationTask {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
      private long id;
     @Column(nullable = false)
-    private String massage;
+    private String message;
     @Column(name="chat_id",nullable = false)
     private long chatId;
     @Column(name="notification_date_time", nullable = false)
@@ -27,12 +27,12 @@ public class NotificationTask {
         this.id = id;
     }
 
-    public String getMassage() {
-        return massage;
+    public String getMessage() {
+        return message;
     }
 
-    public void setMassage(String massage) {
-        this.massage = massage;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public long getChatId() {

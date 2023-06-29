@@ -30,7 +30,7 @@ public class NotificationTaskTimer {
                 LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES)
         ).forEach(notificationTask -> {
             telegramBot.execute(
-                    new SendMessage(notificationTask.getChatId()," Ты просил напомнить о задаче: " + notificationTask.getMassage()));
+                    new SendMessage(notificationTask.getChatId()," Ты просил напомнить о задаче: " + notificationTask.getMessage()));
            notificationTaskRepository.delete(notificationTask);
     });
 }
